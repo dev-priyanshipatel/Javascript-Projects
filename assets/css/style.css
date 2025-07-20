@@ -1,0 +1,148 @@
+*{
+    font-family: "Poppins", serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+   
+}
+
+body{
+ background-color: #0e0e0e;
+   /* background: linear-gradient(135deg, #434343 0%, #000000 100%); */
+
+   
+   
+}
+
+header{
+  background-color: #f2f6f9;
+}
+
+.navbar-brand{
+    color: #2c4964;
+    font-family: "Playfair Display", serif;;
+    letter-spacing: 2px;
+}
+
+.navbar-brand:hover{
+  color: #2c4964;
+}
+
+.title h1{
+  font-family: "Playfair Display", serif;
+}
+.card {
+  --main-color: #dedede;
+  --sub-color: white;
+  --bg-color: #323232;
+  --accent-color: #BC8D66;
+  position: relative;
+  padding: 25px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: var(--bg-color);
+  transition: all 0.2s;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px -1.5px #000;
+}
+
+.card::before {
+  content: '';
+  width: 99%;
+  height: 99%;
+  background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+  position: absolute;
+  z-index: -1;
+  top: 1px;
+  left: 1px;
+  border-radius: 25px;
+  transition: all 0.3s;
+}
+
+.card__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.card__img {
+    border-radius: 20px;
+    height: 80px; 
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    position: relative;
+    background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+    
+}
+
+.card__title {
+  color: var(--main-color);
+  font-weight: 600;
+  font-size: 25px;
+}
+
+
+.card__title a{
+  color: #B800FFFF;
+}
+
+.card__title a{
+  text-decoration: none;
+}
+
+.card__subtitle {
+  color: var(--sub-color);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.card__icon {
+  width: 40px;
+  height: 40px;
+  transform: rotate(-45deg);
+  transition: all 0.3s;
+}
+
+.card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.card__icon g {
+  fill: var(--main-color);
+}
+
+.card__icon circle, polyline, line {
+  stroke: var(--main-color);
+}
+
+.card:hover .card__icon {
+  transform: rotate(0);
+}
+
+.card:hover .card__icon circle, .card:hover .card__icon polyline, .card:hover .card__icon line {
+  stroke: #d43076;
+}
+
+.card:hover .card__icon g {
+  fill: var(--accent-color);
+}
+
+.card:hover {
+  box-shadow: 0px 0px 20px -5px #000;
+}
+
+.card:hover::before {
+  transform: rotate(10deg);
+  box-shadow: 0px 0px 20px -5px #000;
+}
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/fonts/poppins/stylesheet.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center align-items-center my-5">
+      <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-5  d-flex justify-content-center form-container">
+        <div class="col-12 p-3">
+          <h1 class="text-center fs-1 fw-semibold mt-2 mb-4 prime-color">Form Validation</h1>
+          <form action="" id="form">
+
+            <div class="mb-2">
+              <label for="name" class="form-label fw-semibold fs-5 prime-color">Name : </label>
+              <input type="text" class="form-control input" id="name" name="name" >
+              <p id="namepara"></p> 
+            </div>
+
+            <div class="mb-2">
+              <label for="email" class="form-label fw-semibold fs-5 prime-color">Email : </label>
+              <input type="email" class="form-control input" id="email" name="email" >
+              <p id="emailpara"></p>
+            </div>
+
+            <div class="mb-2">
+              <label for="pass" class="form-label fw-semibold fs-5 prime-color">Password : </label>
+              <input type="password"class="form-control input"id="pass">
+              <p id="passpara"></p>
+            </div>
+
+            <div class="mb-2">
+              <label for="cpass" class="form-label fw-semibold fs-5 prime-color">Conform Password : </label>
+              <input type="password" class="form-control input" id="cpass">
+              <p id="cpasspara"></p>
+            </div>
+
+            <div class="mb-2">
+              <label for="cities" class="form-label fw-semibold fs-5 prime-color">City : </label>
+              <select class="form-select input" aria-label="Default select example" name="cities" id="cities">
+                <option selected value="default" class="cities-option">Select City</option>
+                <option value="surat" class="cities-option">Surat</option>
+                <option value="ahmedabad" class="cities-option">Ahmedabad</option>
+                <option value="mahesana" class="cities-option">Mahesana</option>
+              </select>
+              <p id="citiespara"></p>
+            </div>
+            <div class="text-center">
+              <button class="btn fs-5 fw-semibold bold prime-color  " type="submit" id="submitBtn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

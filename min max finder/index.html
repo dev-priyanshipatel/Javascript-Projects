@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="box-container d-flex justify-content-center align-items-center">
+           <h1>Min-Max Finder</h1>
+            <div class="input-container d-flex justify-content-center align-items-center flex-wrap" id="input-container"></div>
+            <div class="btn-container">
+                <button class="btn" id="random-btn">Random</button>
+                <button class="btn" id="minbtn">Min</button>
+                <button class="btn">Max</button>
+                <button class="btn" id="clr-btn">Clear</button>
+            </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+       $(document).ready(() => {
+            let size = 5;
+            let inptcontainer = document.getElementById("input-container");
+       
+            for(let i = 0; i <= size; i++){
+            inptcontainer.innerHTML += `<input type="number" class="inpt" id="inpt${i}">`
+            }
+
+            $("#random-btn").on("click", () => {
+               for(let i = 0; i <= size; i++){
+                    let randomValue = document.getElementById(`inpt${i}`)
+                    randomValue.value = parseInt(Math.random() * 100)
+               }
+            })
+
+            $("#clr-btn").on("click", () => {
+                for(let i = 0; i <= size; i++){
+                    let clearValue = document.getElementById(`inpt${i}`);
+                    clearValue.value = "";
+                }
+            })
+
+            $("#minbtn").on("click", () => {
+                let min = Infinity;
+                for(let i = 1; i <= size; i++){
+                    let inputValue  = document.getElementById(`inpt${i}`).value;
+                    if(inputValue < min){
+                        min = inputValue;
+                        console.log(min)
+                    }
+                }
+            })
+       })
+
+    </script>
+  </body>
+</html>

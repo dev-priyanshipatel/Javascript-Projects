@@ -1,0 +1,92 @@
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Simple Calculator</title>
+
+                <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+                <link rel="stylesheet" href="./assets/css/style.css">
+            </head>
+            <body>
+                <div class="container d-flex justify-content-center mt-5">
+                    <div class="calculator-container shadow-lg p-3 mb-5  rounded-4 ">
+                        <div class="header  p-2 text-center">
+                            <h1 class="fs-1 fw-semibold">Simple Calculator</h1>
+                        </div>
+                        <div class="body">
+                            <div class="mb-3">
+                                <label for="num1" class="form-label fs-5 ">First Number :</label>
+                                <input type="number" class="form-control" id="num1" placeholder="Enter first number">
+                            </div>
+                            <div class="mb-3">
+                                <label for="num2" class="form-label fs-5">Second Number :</label>
+                                <input type="number" class="form-control" id="num2" placeholder="Enter Second number">
+                            </div>
+                            <div class="mb-4">
+                                <label for="ans" class="form-label fs-5">Answer:</label>
+                                <input type="text" id="ans" class="form-control">
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-6">
+                                    <button type="button" class="btn w-100 " id="sumBtn"><i class="bi bi-plus-lg"></i></button>
+                                </div>  
+                                <div class="col-6">
+                                    <button type="button" class="btn  w-100" id="minusBtn"><i class="bi bi-dash"></i></button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn  w-100" id="multiplyBtn"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn  w-100" id="divisionBtn"><i class="bi bi-slash-lg"></i></button>
+                                </div>
+                            </div>
+                            <input class="btn btn-danger btn-lg w-100" type="reset" value="Reset" id="resetBtn">
+                        </div>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        const num1Element = document.getElementById("num1");
+                        const num2Element = document.getElementById("num2");
+                        const ansElement = document.getElementById("ans");
+                        const resetElement = document.getElementById("resetBtn");
+
+                        $("#sumBtn").on("click", function(){
+                            let num1 = Number(num1Element.value);
+                            let num2 = Number(num2Element.value);
+                            ansElement.value = `${num1+num2}`;
+                        })
+
+                        $("#minusBtn").on("click", function () {
+                            let num1 = Number(num1Element.value);
+                            let num2 = Number(num2Element.value);
+                            ansElement.value=`${num1-num2}`;
+                        })
+
+                        $("#multiplyBtn").on("click", function () {
+                            let num1 = Number(num1Element.value);
+                            let num2 = Number(num2Element.value);
+                            ansElement.value=`${num1*num2}`;
+                        })
+
+                        $("#divisionBtn").on("click", function () {
+                            let num1 = Number(num1Element.value);
+                            let num2 = Number(num2Element.value);
+                            ansElement.value=`${num1/num2}`;
+                        })
+
+                        $("#resetBtn").on("click", function(){
+                            num1Element.value = "";
+                            num2Element.value = "";
+                            ansElement.value = "";
+                        })
+                    });
+                </script>
+            </body>
+            </html>
