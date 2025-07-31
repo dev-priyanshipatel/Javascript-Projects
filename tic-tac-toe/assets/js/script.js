@@ -8,9 +8,7 @@
         document.getElementById("scorey").innerHTML = "0";
 
         function resetAll(){
-            // for(let i = 1; i <= 9; i++){
-            //     document.getElementById(`b${i}`).innerHTML = "";
-            // }
+        
              $(".cell").html("").removeClass("x-sign o-sign");
             count = 0;
             scoreX = 0;
@@ -21,9 +19,7 @@
         }
 
         function resetGame(){
-            // for(let i = 1; i <= 9; i++){
-            //     document.getElementById(`b${i}`).innerHTML = "";
-            // }
+         
             $(".cell").html("").removeClass("x-sign o-sign");
             count = 0;
             document.getElementById("turn").innerHTML = "X"
@@ -188,7 +184,7 @@
         return false;
     }
 
-        $(document).ready(() => {
+        $(document).ready(function() {
             $(".cell").on("click", function() {
 
                 let value = this;
@@ -203,18 +199,11 @@
                     timer: 1000,
                 });
                 }else{
-                    // value.classList.remove("x-sign", "o-sign");
-
+                
                     if(count % 2 == 0){
-                        
-                        // value.classList.add("x-sign");
-                        // value.innerHTML = "X";
                         $(value).addClass("x-sign").text("X");
                         document.getElementById("turn").innerHTML = "O"
                     }else{
-                         
-                        // value.classList.add("o-sign")
-                        // value.innerHTML = "O";
                         $(value).addClass("o-sign").text("O");
                          document.getElementById("turn").innerHTML = "X"
                     }
