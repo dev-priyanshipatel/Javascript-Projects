@@ -27,7 +27,9 @@
 
         function draw(){
             Swal.fire({
-                text: "Match Draw",
+                title: "Match Draw",
+                icon: "info",
+                draggable: true,
                 heightAuto: false,
             });
             resetGame();
@@ -35,7 +37,9 @@
 
         function score(sign){
         Swal.fire({
-            text: `Player ${sign} Won`,
+            title: `Player ${sign} Won`,
+            icon: "success",
+            draggable: true,
             heightAuto: false,
         });
     
@@ -197,6 +201,7 @@
                     title: 'Cell already filled',
                     showConfirmButton: false,
                     timer: 1000,
+                    heightAuto: false
                 });
                 }else{
                 
