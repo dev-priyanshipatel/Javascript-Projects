@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/CSS/nice-style.css">
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+    
+</head>
+<body>
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="to-do-container ">
+          <div class="header mb-3">
+            <h1 class="text-center p-3">📝 To Do List</h1>
+            <hr class="divider">
+          </div>
+           <div class="d-flex justify-content-between gap-3">
+              <input placeholder="Enter Your Task" type="text" name="text" class="input" id="input-task">
+              <select  id="priority">
+                <option value="" data-display="Select">Select Your Priority</option>
+                <option value="1">High</option>
+                <option value="2">Medium</option>
+                <option value="3">Low</option>
+              </select>
+           </div>
+              <div class="my-3 text-center">
+                <button type="button" class="btn btn-primary" id="add-btn">Add Task</button>
+              </div>
+
+              <div class="task-list" id="taskList">
+                <div class="empty-state">
+                  <i class="fas fa-tasks"></i>
+                  <h3>No tasks yet</h3>
+                </div>
+              </div>
+      
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./assets/JS/jquery-nice-select.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    
+    <script>
+        $(document).ready(function() {
+          $('select').niceSelect();
+   
+          function priorityText(priority){
+            switch(priority){
+              case "1" : 
+                return `<span class="badge text-danger">High priority</span>`;
+              case "2" : 
+                return `<span class="badge text-warning">Medium priority</span>`;
+              case "3" : 
+                return `<span class="badge text-success">Low priority</span>`;
+            }
+          }
+
+          function taskListColor(priority){
+            switch(priority){
+              case "1" :
+                return "#BB2D3B";
+              case "2" :
+                return "#ffc107";
+              case "3" :
+                return "#198754";
+            }
+          }
+
+          function showtask(){
+            
+            if (taskArr.length === 0) {
+              $(".empty-state").show();
+            } else {
+              $(".empty-state").hide();
+            }
+
+            document.getElementById("taskList").innerHTML = "";
+
+            taskArr.forEach((data,idx) => {
+              document.getElementById("taskList").innerHTML += `
+               
+                  <div class = "task-item d-flex justify-content-between" style = "border-left-color :${taskListColor(data.priority)}"> 
+                    <div>
+                      <h3>${data.task}</h3>
+                      <h4>${priorityText(data.priority)}</h4>
+                    </div>
+                    <span><i class="fa-solid fa-trash text-danger delete-task" data-index="${idx}" style="cursor:pointer;"></i></span>
+                  </div>
+               `
+            })
+          }
+
+          $("#taskList").on("click", ".delete-task", function () {
+            let taskIndex = $(this).data("index");
+            taskArr.splice(taskIndex, 1);
+            showtask();
+          });
+
+          let taskArr =[];
+
+          $("#add-btn").on("click",function(){
+
+            let task = $("#input-task").val().trim();
+            let priority = $("#priority").val();
+  
+            if (task === "" || priority === "" || priority === "Select Your Priority") {
+              Swal.fire({
+                toast: true,
+                position: 'center',
+                icon: 'warning',
+                title: 'Please enter task and priority',
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            return; 
+            }
+            if(task && priority){
+               
+              let taskListObj = {
+                Id : Date.now(),
+                task : task,
+                priority : priority,
+              }   
+
+            taskArr.push(taskListObj);
+
+            showtask();
+
+            $("#input-task").val("");                     
+            $("#priority").val("").niceSelect("update"); 
+            }
+          })
+      });
+       
+    </script>
+</html>
