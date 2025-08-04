@@ -195,22 +195,20 @@
 
                 if(value.innerHTML != ""){
                     Swal.fire({
-                    toast: true,
-                    position: 'center',
-                    icon: 'warning',
-                    title: 'Cell already filled',
-                    showConfirmButton: false,
-                    timer: 1000,
-                    heightAuto: false
-                });
+                        title: "Cell Already Filled",
+                        icon: "error",
+                        draggable: true,
+                        heightAuto: false,
+                    });
                 }else{
-                
                     if(count % 2 == 0){
-                        $(value).addClass("x-sign").text("X");
+                        $(value).text("X");
+                        $(value).addClass("x-sign");
                         document.getElementById("turn").innerHTML = "O"
                     }else{
-                        $(value).addClass("o-sign").text("O");
-                         document.getElementById("turn").innerHTML = "X"
+                        $(value).text("O");
+                        $(value).addClass("o-sign");
+                        document.getElementById("turn").innerHTML = "X"
                     }
                     count++;
                 }
