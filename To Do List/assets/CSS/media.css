@@ -1,0 +1,218 @@
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .to-do-container {
+        width: 95%;
+        min-width: 300px;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .title {
+        font-size: 30px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .input-container {
+        padding: 8px;
+    }
+
+    .d-flex.justify-content-between.gap-3 {
+        flex-direction: column;
+        gap: 12px !important;
+    }
+
+    .input {
+        font-size: 14px;
+        height: 45px;
+        padding: 10px;
+    }
+
+    #priority {
+        width: 100%;
+        height: 45px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #add-btn {
+        height: 42px;
+        font-size: 16px;
+        line-height: 30px;
+        padding: 6px;
+    }
+
+    .task-item {
+        padding: 10px;
+        margin-bottom: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .task-item h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+        word-wrap: break-word;
+        width: 100%;
+    }
+
+    .delete-btn {
+        align-self: flex-end;
+        height: 32px;
+        width: 32px;
+    }
+
+    .delete-btn img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .to-do-container {
+        width: 85%;
+        min-width: 400px;
+        padding: 18px;
+    }
+
+    .title {
+        font-size: 30px;
+        width: 80%;
+    }
+
+    .d-flex.justify-content-between.gap-3 {
+        flex-direction: column;
+        gap: 15px !important;
+    }
+
+    .input {
+        font-size: 16px;
+        height: 48px;
+    }
+
+    #priority {
+        width: 100%;
+        height: 48px;
+        font-size: 16px;
+    }
+
+    #add-btn {
+        height: 45px;
+        font-size: 17px;
+    }
+
+    .task-item {
+        padding: 12px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .task-item h3 {
+        font-size: 18px;
+    }
+
+    .empty-state {
+        font-size: 50px;
+    }
+
+    .delete-btn {
+        height: 36px;
+        width: 36px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .to-do-container {
+        width: 75%;
+        min-width: 500px;
+    }
+
+    .title {
+        font-size: 55px;
+    }
+
+    .d-flex.justify-content-between.gap-3 {
+        flex-direction: row;
+        gap: 15px !important;
+    }
+
+    .input {
+        flex: 2;
+    }
+
+    #priority {
+        flex: 1;
+        min-width: 180px;
+    }
+
+    .task-item h3 {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 768px) {
+    .task-item {
+        box-shadow: 2px 2px 0px #33322E;
+    }
+
+    .task-item:hover {
+        transform: translateY(-1px);
+        box-shadow: 3px 3px 0px #33322E;
+    }
+
+    #add-btn {
+        box-shadow: 2px 2px 0px #33322E;
+    }
+
+    #add-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 4px 4px 0px #33322E;
+    }
+
+    #add-btn:active {
+        transform: translateY(0);
+        box-shadow: 1px 1px 0px #33322E;
+    }
+
+    .delete-btn:hover {
+        box-shadow: 2px 2px 0px #33322E;
+        transform: translate(-1px, -1px);
+    }
+}
+
+@media (max-width: 600px) {
+    .task-item h3 {
+        line-height: 1.3;
+        word-break: break-word;
+    }
+
+    .badge {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+
+    .to-do-container {
+        margin: 5px auto;
+        padding: 12px;
+    }
+
+    .empty-state {
+        font-size: 25px;
+        padding: 20px;
+    }
+
+    .empty-state i {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    .empty-state h3 {
+        font-size: 18px;
+        margin: 0;
+    }
+}
+
