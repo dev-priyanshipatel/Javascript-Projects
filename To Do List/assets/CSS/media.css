@@ -48,9 +48,10 @@
     .task-item {
         padding: 10px;
         margin-bottom: 8px;
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: flex-start;
         gap: 10px;
+        
     }
 
     .task-item h3 {
