@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Anagram</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="main-header">
+            <h1 class="page-title">Anagram Checker</h1>
+            <p class="page-subtitle">Check if two strings are anagrams of each other</p>
+        </header>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12">
+                    <div class="glass-card">
+                        <div class="mb-4">
+                            <label class="input-label">First String:</label>
+                            <input type="text" class="glass-input" id="input1" placeholder="Enter String Here">
+                        </div>
+                        <div class="mb-4">
+                            <label class="input-label">Second String:</label>
+                            <input type="text" class="glass-input" id="input2" placeholder="Enter String Here">
+                        </div>
+                        
+                        <button id="submit-btn" class="primary-btn mb-3">Check Anagram</button>
+                        <button class="reset-btn" id="reset-btn">Reset</button>
+                        
+                        <div id="resultBox" class="result-box">
+                            <div class="result-text" id="resultText"></div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="../index.html" class="back-btn">← Back to Functions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#submit-btn").on("click", function(){
+                let input1 = document.getElementById("input1").value.trim().toLowerCase();
+                let input2 = document.getElementById("input2").value.trim().toLowerCase();
+                let resultBox = document.getElementById("resultBbox");
+                let resultText = document.getElementById("resultText");
+
+                $("#resultBox").removeClass("error success");
+
+                if(input1 === "" || input2 === ""){
+                    resultText.innerText = "Please Enter String";
+                    $("#resultBox").addClass("error");
+                    $("#resultBox").css("display", "block");
+                    return;
+                }
+
+                let sortStr1 = input1.split("").sort().join("");
+                let sortStr2 = input2.split("").sort().join("");
+
+                if(sortStr1 === sortStr2){
+                    resultText.innerText = "It's Anagram";
+                    $("#resultBox").addClass("success");
+                    $("#resultBox").css("display" , "block");
+                }else{
+                    resultText.innerText = "It's Not Anagram";
+                    $("#resultBox").addClass("error");
+                    $("#resultBox").css("display" , "block");
+                }
+            })
+
+            $("#reset-btn").on("click", function(){
+                $("#resultText").text("");
+                $("#input1").val("");
+                $("#input2").val("");
+                $("#resultBox").removeClass("error success").hide();
+            })
+        })
+    </script>
+</body>
+</html>

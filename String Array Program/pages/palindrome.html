@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Palindrome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="main-header">
+            <h1 class="page-title">Palindrome Checker</h1>
+            <p class="page-subtitle">Check if a string reads the same forwards and backwards</p>
+        </header>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12">
+                    <div class="glass-card">
+                        <div class="mb-4">
+                            <label class="input-label">Enter String:</label>
+                            <input type="text" class="glass-input" id="input-text" placeholder="string like name , fruit name etc...">
+                        </div>
+                        
+                        <button id="submit-btn" class="primary-btn mb-3">Check Palindrome</button>
+                        <button class="reset-btn" id="reset-btn">Reset</button>
+                        
+                        <div id="resultBox" class="result-box">
+                            <div class="result-text" id="resultText"></div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="../index.html" class="back-btn">← Back to Functions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#submit-btn").on("click", function(){
+                let inputValue = document.getElementById("input-text").value.trim();
+                let resultBox = document.getElementById("resultBox");
+                let result = document.getElementById("resultText");
+
+                $("#resultBox").removeClass("error success");
+
+                if(inputValue === ""){
+                   result.innerHTML = "Please enter String";
+                   $("#resultBox").addClass("error");
+                   $("#resultBox").css("display","block")
+                   return;
+                }
+
+                let str = inputValue.toLowerCase();
+                let str2 = str.split("").reverse().join("");
+
+                if(str === str2){
+                    result.innerHTML = "It's Palindrome";
+                   $("#resultBox").addClass("success");
+                   $("#resultBox").css("display","block")
+                } else{
+                   result.innerHTML = "It's Not Palindrome";
+                   $("#resultBox").addClass("error");
+                   $("#resultBox").css("display","block")
+                }
+            })
+            $("#reset-btn").on("click", function(){
+                $("#resultText").html("")
+                $("#input-text").val("")
+                $("#resultBox").removeClass("error success").hide();
+            })
+        })
+    </script>
+</body>
+</html>

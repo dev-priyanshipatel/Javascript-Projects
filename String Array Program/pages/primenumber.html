@@ -1,0 +1,99 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Check Prime Number</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head> 
+    <body>
+        <div class="container-fluid">
+            <header class="main-header">
+                <h1 class="page-title">Check Prime Number</h1>
+                <p class="page-subtitle">Check and display prime number.</p>
+            </header>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12">
+                        <div class="glass-card">
+                            <div class="mb-4">
+                                <label class="input-label">Enter Numbers(Saperate by space):</label>
+                                <input type="text" class="glass-input" id="input-text" placeholder="Numbers">
+                            </div>
+
+                            <button id="submit-btn" class="primary-btn mb-3">Find</button>
+                            <button class="reset-btn" id="reset-btn">Reset</button>
+
+                            <div id="resultBox" class="result-box">
+                                <div class="result-text" id="resultText"></div>
+                            </div>
+
+                            <div class="text-center">
+                                <a href="../index.html" class="back-btn">← Back to Functions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#submit-btn").on("click", function(){
+                    let inputText = document.getElementById("input-text").value.trim();
+                    let resultBox = document.getElementById("resultBox");
+                    let resultText = document.getElementById("resultText");
+
+                    $("#resultBox").removeClass("error success");
+
+                    if (inputText === "") {
+                        resultText.innerText = "Please Enter Numbers";
+                        $("#resultBox").addClass("error");
+                        $("#resultBox").css("display", "block");
+                        return;
+                    }
+
+                    let number = inputText.split(" ").map(val => parseInt(val)).filter(val => !isNaN(val));
+
+                    if (number.length === 0) {
+                        resultText.innerText = "Invalid input! Please enter numbers only.";
+                        $("#resultBox").addClass("error");
+                        $("#resultBox").css("display", "block");
+                        return;
+                    }
+
+                    function isPrime(num) {
+                        if (num <= 1) return false;
+                        if (num === 2) return true;
+                        if (num % 2 === 0) return false;
+
+                        for (let i = 3; i <= Math.sqrt(num); i += 2) {
+                            if (num % i === 0) return false;
+                        }
+                        return true;
+                    }
+                    
+                    let primeNum = number.filter(isPrime);
+
+                    if(primeNum.length > 0){
+                        resultText.innerText = `Prime Numbers : ${primeNum.join(",")}`;
+                        $("#resultBox").addClass("success");
+                    }else{
+                        resultText.innerText = "No Prime Numbers Found!";
+                        $("#resultBox").addClass("error");
+                    }
+
+                    $("#resultBox").css("display", "block");
+                })
+
+                $("#reset-btn").on("click", function () {
+                    $("#resultText").text("");
+                    $("#input-text").val("");
+                    $("#resultBox").removeClass("error success").hide();
+                })
+            })
+        </script>
+    </body>
+    </html>

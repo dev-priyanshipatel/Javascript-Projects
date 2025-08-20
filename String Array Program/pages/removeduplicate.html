@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove duplicate Numbers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+            <header class="main-header">
+                <h1 class="page-title">Remove Duplicte Numbers</h1>
+                <p class="page-subtitle">Remove duplicates and display unique numbers.</p>
+            </header>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12">
+                        <div class="glass-card">
+                            <div class="mb-4">
+                                <label class="input-label">Enter Numbers(Saperate by space):</label>
+                                <input type="text" class="glass-input" id="input-text" placeholder="Numbers">
+                            </div>
+
+                            <button id="submit-btn" class="primary-btn mb-3">Find</button>
+                            <button class="reset-btn" id="reset-btn">Reset</button>
+
+                            <div id="resultBox" class="result-box">
+                                <div class="result-text" id="resultText"></div>
+                            </div>
+
+                            <div class="text-center">
+                                <a href="../index.html" class="back-btn">← Back to Functions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#submit-btn").on("click", function(){
+                    let inputText = document.getElementById("input-text").value.trim();
+                    let resultBox = document.getElementById("resultBox");
+                    let resultText = document.getElementById("resultText");
+
+                    $("#resultBox").removeClass("error success");
+
+                    if (inputText === "") {
+                        resultText.innerText = "Please Enter Numbers";
+                        $("#resultBox").addClass("error");
+                        $("#resultBox").css("display", "block");
+                        return;
+                    }
+
+                    let number = inputText.split(" ").map(val => Number(val));
+
+                    if (number.some(x => isNaN(x))) {
+                        resultText.innerText = "Please Enter Numbers";
+                        $("#resultBox").addClass("error");
+                        $("#resultBox").css("display", "block");
+                        return;
+                    }
+
+                    let uniqueArr = [];
+
+                    for(let i = 0; i < number.length; i++){
+                        if(!uniqueArr.includes(number[i])){
+                            uniqueArr.push(number[i]);
+                        }
+                    }
+
+                    resultText.innerText = `${uniqueArr}`;
+                    $("#resultBox").addClass("success");
+                    $("#resultBox").css("display", "block");
+                })
+            })
+        </script>
+</body>
+</html>

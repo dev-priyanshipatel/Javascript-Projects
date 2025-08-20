@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert UpperCase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="main-header">
+            <h1 class="page-title">Convert To Uppercase</h1>
+            <p class="page-subtitle">Transform your text to Uppercase</p>
+        </header>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12">
+                    <div class="glass-card">
+                        <div class="mb-4">
+                            <label class="input-label">Enter String:</label>
+                            <input type="text" class="glass-input" id="input-text" placeholder="phrase or string">
+                        </div>
+                        
+                        <button id="submit-btn" class="primary-btn mb-3">Convert Uppercase</button>
+                        <button class="reset-btn" id="reset-btn">Reset</button>
+                        
+                        <div id="resultBox" class="result-box">
+                            <div class="result-text" id="resultText"></div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="../index.html" class="back-btn">← Back to Functions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#submit-btn").on("click", function(){
+                let inputText = document.getElementById("input-text").value.trim();
+                let resultBox = document.getElementById("resultBox");
+                let resultText = document.getElementById("resultText");
+
+                $("#resultBox").removeClass("error success");
+
+                if(inputText === ""){
+                    resultText.innerText = "Please Enter string";
+                    $("#resultBox").addClass("error");
+                    $("#resultBox").css("display" , "block");
+                    return;
+                }
+
+                let upperstring = inputText.toUpperCase();
+
+                resultText.innerText = `${upperstring}`
+                $("#resultBox").addClass("success");
+                $("#resultBox").css("display" , "block");
+
+                $("#reset-btn").on("click", function(){
+                $("#resultText").text("");
+                $("#input-text").val("");
+                $("#resultBox").removeClass("error success").hide();
+            })
+                
+            })
+        })
+    </script>
+</body>
+</html>
