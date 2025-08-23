@@ -1,0 +1,192 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #6994c5;
+  /* overflow: hidden; */
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-width: 800px;
+  min-height: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  /* background: #6994c5; */
+  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); */
+}
+
+
+
+.wrapper {
+  padding: 30px 30px;
+  border-radius: 10px;
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease;
+}
+
+.wrapper:hover {
+  box-shadow: none;
+}
+
+.main {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  gap: 10px;
+  /* width: 20%; */
+  text-align: center;
+  position: relative;
+  /* font-size: 60px; */
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+}
+
+.inpt {
+  width: 200px;
+  min-height: 45px;
+  outline: none;
+  transition: 0.35s;
+  padding: 0px 15px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.btn-wrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.butn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.butn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.butn:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#showtimer{
+  font-size: 60px;
+}
+
+
+.hiden {
+  display: none;
+}
+
+.blue-text {
+  color: #e8f4fd;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-style: italic;
+}
+
+.title{
+  color: #e8f4fd;
+  text-shadow: 1px 1px 3px rgba(246, 241, 241, 0.792);
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 20px;
+  }
+
+  .wrapper {
+  padding: 20px 20px;
+  }
+
+  .inpt {
+    width: 170px;
+    font-size: 14px;
+  }
+
+  .main {
+    font-size: 40px;
+  }
+
+    #showtimer {
+      font-size: 40px;
+    }
+
+
+  .butn {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 671px) {
+  .main-container{
+    padding: 15px;
+  }
+
+  .wrapper {
+  padding: 15px 15px;
+  }
+
+  .main{
+    gap: 10px;
+  }
+
+  .inpt{
+    width: 140px;
+  }
+  #showtimer{
+  font-size: 30px;
+}
+
+}
+
+@media (max-width: 469px) {
+  .inpt{
+    width: 100px;
+  }
+}
