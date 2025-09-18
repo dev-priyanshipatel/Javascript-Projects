@@ -1,0 +1,63 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+/* heder style  */
+
+/* style for counter */
+.item-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* hero section style  */
+
+
+/* style for swiper slider */
+.mySwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    max-width: 100%;
+    height: 100%;
+    background-size :cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.swiper-slide.slide-1{
+    background-image: url(../photos/hero-img-1.jpg);
+    
+}
+
+.swiper-slide.slide-2{
+    background-image: url(../photos/hero-img-1-1.jpg);
+    
+}
+
+/* pagination bullets */
+.swiper-pagination-bullet {
+    border:1px solid rgba(79, 130, 218, 0.507);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet:hover{
+    background-color: rgba(79, 130, 218, 0.507);
+}
+
+.swiper-pagination-bullet-active {
+    background: rgba(79, 130, 218, 0.507);
+}
