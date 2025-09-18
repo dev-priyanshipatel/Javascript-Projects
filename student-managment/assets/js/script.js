@@ -45,6 +45,14 @@ class StudentManagment {
       return;
     }
 
+    if(grid.trim().length < 4 ){
+      Swal.fire({
+        icon: "error",
+        text: "GRID should be atleast 4 digits.",
+      });
+      return;
+    }
+
     const student = new Student(name, grid, age, course, gender);
 
     if (this.editIdx === -1) {
