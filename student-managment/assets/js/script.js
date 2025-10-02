@@ -45,7 +45,7 @@ class StudentManagment {
       return;
     }
 
-    if(grid.trim().length < 4 ){
+    if (grid.trim().length < 4) {
       Swal.fire({
         icon: "error",
         text: "GRID should be atleast 4 digits.",

@@ -3,6 +3,11 @@
     text-decoration: none;
     box-sizing: border-box;
 }
+
+:root{
+    --product-name-color : #4f4d4d;
+    --product-name-hover : #79b6c8;
+}
 /* heder style  */
 
 /* style for counter */
@@ -10,7 +15,7 @@
     position: absolute;
     top: -5px;
     right: -10px;
-    background: red;
+    background: blue;
     color: white;
     border-radius: 50%;
     font-size: 0.8rem;
@@ -19,6 +24,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: none;
 }
 
 /* hero section style  */
@@ -60,4 +70,41 @@
 
 .swiper-pagination-bullet-active {
     background: rgba(79, 130, 218, 0.507);
+}
+
+/* product page style  */
+
+.product-title{
+    color: var(--product-name-color);
+}
+
+.product-title:hover{
+    color: var(--product-name-hover);
+    cursor: pointer;
+}
+
+.product-price{
+    color: var(--product-name-hover);
+}
+
+.cart{
+    color: var(--product-name-color);
+    border: none;
+    background-color: white;
+    transition: all 0.5 linear;
+}
+
+.cart:hover{
+    cursor: pointer;
+    color: var(--product-name-hover);
+}
+
+/* cart page style  */
+
+.qty-btn{
+    background-color: #79b6c8;
+}
+
+.qty-btn:hover{
+    background-color: #79b6c8;
 }
