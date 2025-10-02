@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e3f2fd;
+    min-height: 100vh;
+    color: #1565c0;
+}
+
+h2 {
+    color: #0d47a1;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.input-group {
+    box-shadow: 0 4px 8px rgba(13, 71, 161, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#inpt {
+    border: 2px solid #64b5f6;
+    border-right: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #0d47a1;
+}
+
+#inpt:focus {
+    outline: none;
+    border-color: #42a5f5;
+    box-shadow: none;
+    background-color: #ffffff;
+}
+
+#inpt::placeholder {
+    color: #90caf9;
+}
+
+#findbtn {
+    background-color: #2196f3;
+    border: 2px solid #2196f3;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 12px 24px;
+    letter-spacing: 0.5px;
+}
+
+#findbtn:hover {
+    background-color: #1976d2;
+    border-color: #1976d2;
+}
+
+#findbtn:active {
+    background-color: #1565c0;
+    border-color: #1565c0;
+}
+
+.main-container {
+    margin-top: 30px;
+}
+
+.main-container>div {
+    background-color: #ffffff;
+    border: 2px solid #90caf9;
+}
+
+.card-title {
+    color: #0d47a1;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.main-container h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1976d2;
+}
+
+.main-container h4 {
+    color: #42a5f5;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.bg-light {
+    background-color: #e3f2fd !important;
+    border-color: #bbdefb !important;
+}
+
+.bg-light p.fw-bold {
+    color: #1565c0;
+    font-size: 14px;
+}
+
+.bg-light p:not(.fw-bold) {
+    color: #1976d2;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.error-msg {
+    background-color: #ffffff;
+    margin-top: 30px;
+}
+
+.error-msg p {
+    font-size: 16px;
+}
+
+
+/* media query  */
+
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    .card-title {
+        font-size: 24px;
+    }
+
+    .main-container h2 {
+        font-size: 40px;
+    }
+
+    .main-container h4 {
+        font-size: 18px;
+    }
+}
