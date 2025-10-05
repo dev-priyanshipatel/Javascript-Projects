@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 India Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-virus-covid"></i>COVID-19 India Tracker</h1>
+            <p class="subtitle">Search state statistics</p>
+        </header>
+
+        <div class="search-box">
+            <label for="stateInput"><i class="fa-solid fa-map-location-dot"></i>Enter State Name</label>
+            <div class="input-wrapper">
+                <input type="text" id="stateInput" placeholder="e.g., Maharashtra, Delhi" autocomplete="off">
+                <button class="search-btn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+            </div>
+        </div>
+
+        <div id="results" class="results">
+            <div class="message h2" id="message" >Enter a state name to view COVID-19 statistics</div>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+   
+</body>
+
+</html>
